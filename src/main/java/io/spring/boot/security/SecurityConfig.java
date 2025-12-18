@@ -33,7 +33,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())		// Disable CSRF protection since we're using stateless JWT authentication
                 .authorizeHttpRequests(auth -> auth		// Configure authorization rules for HTTP requests
                         // Public endpoints (no authentication required)
-                        .requestMatchers("/api/users", "/api/users/login").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+                		.requestMatchers("/api/users", "/api/users/login").permitAll()
                         .requestMatchers("/api/tags").permitAll()
                         .requestMatchers("/api/articles").permitAll()
                         .requestMatchers("/api/articles/{slug}").permitAll()
@@ -46,7 +47,6 @@ public class SecurityConfig {
                         .requestMatchers("/api/articles/**").authenticated() // Covers POST, PUT, DELETE
                         .requestMatchers("/api/articles/{slug}/favorite").authenticated()
                         .requestMatchers("/api/articles/{slug}/comments/{id}").authenticated()
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                         .requestMatchers("/api/users/login", "/api/users").permitAll()
                         // Fallback: any other /api/** requires authentication
 //                        .requestMatchers("/api/**").authenticated()
