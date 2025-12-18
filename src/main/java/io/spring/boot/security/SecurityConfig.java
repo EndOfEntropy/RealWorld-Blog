@@ -46,6 +46,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/articles/**").authenticated() // Covers POST, PUT, DELETE
                         .requestMatchers("/api/articles/{slug}/favorite").authenticated()
                         .requestMatchers("/api/articles/{slug}/comments/{id}").authenticated()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/api/users/login", "/api/users").permitAll()
                         // Fallback: any other /api/** requires authentication
 //                        .requestMatchers("/api/**").authenticated()
                 )
