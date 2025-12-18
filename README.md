@@ -1,6 +1,8 @@
 # RealWorld Blog API
-
 A robust RESTful API implementation of the RealWorld spec using Spring Boot.
+
+## 📚 RealWorld Spec
+This project implements the [RealWorld API specification](https://realworld-docs.netlify.app/specifications/backend/introduction/), ensuring compatibility with any RealWorld frontend implementation.
 
 ## 🚀 Live Demo
 - **API:** https://realworld-blog-production.up.railway.app/api
@@ -22,7 +24,23 @@ A robust RESTful API implementation of the RealWorld spec using Spring Boot.
 - Comment system
 - Tag filtering
 
+  ## 💡 Key Learning Outcomes
+- RESTful API design following industry standards
+- JWT-based authentication and authorization
+- Database relationships with Spring Data JPA
+- Exception handling and validation
+- API deployment with Railway
+- Version control with Git/GitHub
+
 ## 🧪 Testing the API
+✅ All RealWorld API spec tests pass
+
+![Postman Tests](screenshots/postman-tests.png)
+
+### Run Tests Locally
+1. Import the [Postman collection](https://github.com/gothinkster/realworld/tree/main/api)
+2. Set environment variable: `APIURL = http://localhost:3000/api`
+3. Run collection - all tests pass ✅
 
 ### Browser Test
 Visit: https://realworld-blog-production.up.railway.app/api/tags
@@ -78,17 +96,6 @@ The API will be available at `http://localhost:3000/api`
 - `POST /api/articles/:slug/comments` - Add comment
 - `DELETE /api/articles/:slug/comments/:id` - Delete comment
 - `GET /api/tags` - Get tags
-
-## 💡 Key Learning Outcomes
-- RESTful API design following industry standards
-- JWT-based authentication and authorization
-- Database relationships with Spring Data JPA
-- Exception handling and validation
-- API deployment with Railway
-- Version control with Git/GitHub
-
-## 📚 RealWorld Spec
-This project implements the [RealWorld API specification](https://realworld-docs.netlify.app/specifications/backend/introduction/), ensuring compatibility with any RealWorld frontend implementation.
 
 ## 📝 License
 MIT License
