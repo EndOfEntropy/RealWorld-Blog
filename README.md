@@ -78,39 +78,36 @@ The API will be available at http://localhost:3000/api
 Swagger UI will be available at http://localhost:3000/swagger-ui.html
 
 ## 📋 API Endpoints
+
 All endpoints are documented and testable via Swagger UI. Main endpoints include:
-Authentication:
 
-POST /api/users - Register user
-POST /api/users/login - Login user
-GET /api/user - Get current user
-PUT /api/user - Update user
+**Authentication:**
+- `POST /api/users` - Register user
+- `POST /api/users/login` - Login user
+- `GET /api/user` - Get current user
+- `PUT /api/user` - Update user
 
-Profiles:
+**Profiles:**
+- `GET /api/profiles/:username` - Get profile
+- `POST /api/profiles/:username/follow` - Follow user
+- `DELETE /api/profiles/:username/follow` - Unfollow user
 
-GET /api/profiles/:username - Get profile
-POST /api/profiles/:username/follow - Follow user
-DELETE /api/profiles/:username/follow - Unfollow user
+**Articles:**
+- `GET /api/articles` - List articles
+- `POST /api/articles` - Create article
+- `GET /api/articles/:slug` - Get article
+- `PUT /api/articles/:slug` - Update article
+- `DELETE /api/articles/:slug` - Delete article
+- `POST /api/articles/:slug/favorite` - Favorite article
+- `DELETE /api/articles/:slug/favorite` - Unfavorite article
 
-Articles:
+**Comments:**
+- `GET /api/articles/:slug/comments` - Get comments
+- `POST /api/articles/:slug/comments` - Add comment
+- `DELETE /api/articles/:slug/comments/:id` - Delete comment
 
-GET /api/articles - List articles
-POST /api/articles - Create article
-GET /api/articles/:slug - Get article
-PUT /api/articles/:slug - Update article
-DELETE /api/articles/:slug - Delete article
-POST /api/articles/:slug/favorite - Favorite article
-DELETE /api/articles/:slug/favorite - Unfavorite article
-
-Comments:
-
-GET /api/articles/:slug/comments - Get comments
-POST /api/articles/:slug/comments - Add comment
-DELETE /api/articles/:slug/comments/:id - Delete comment
-
-Tags:
-
-GET /api/tags - Get tags
+**Tags:**
+- `GET /api/tags` - Get tags
 
 ## 📝 License
 MIT License
